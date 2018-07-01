@@ -159,6 +159,15 @@ nav h1 a {
         width: 48%;
     }
 }
+@media screen and (min-width: 600px) {
+    .filter-options {
+        justify-content: left;
+    }
+    .filter-options select {
+        width: 250px;
+        margin-right: 20px;
+    }
+}
 
 /* ====================== Restaurant Listing ====================== */
 #restaurants-list {
