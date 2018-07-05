@@ -220,6 +220,9 @@ nav h1 a {
     text-decoration: none;
     text-transform: uppercase;
 }
+#restaurants-list li a:focus {
+    background-color: green;
+}
 @media screen and (min-width: 600px) {
     #restaurants-list {
         grid-template-columns: 1fr 1fr;
