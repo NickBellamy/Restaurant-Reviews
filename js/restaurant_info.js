@@ -29,9 +29,9 @@ initMap = () => {
                         "pk.eyJ1IjoiZG5hYiIsImEiOiJjamlzbndmdHIxdDBjM3FwbWhkbWIwd3VyIn0.ArSmG0NBpmaqvQu06kKJlA",
                     maxZoom: 18,
                     attribution:
-                        'Map data &copy; <a href="https://www.openstreetmap.org/" tabindex="-1">OpenStreetMap</a> contributors, ' +
-                        '<a href="https://creativecommons.org/licenses/by-sa/2.0/" tabindex="-1">CC-BY-SA</a>, ' +
-                        'Imagery © <a href="https://www.mapbox.com/ tabindex="-1"">Mapbox</a>',
+                        'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+                        '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                        'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
                     id: "mapbox.streets"
                 }
             ).addTo(newMap);
