@@ -126,6 +126,13 @@ nav h1 a {
     width: 100%;
     background-color: #ccc;
 }
+.leaflet-interactive:focus {
+    border: solid green;
+}
+.leaflet-control-zoom a:focus {
+    background: green;
+    color: #fff;
+}
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
     background-color: #3397db;
