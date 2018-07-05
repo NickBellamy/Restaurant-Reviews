@@ -122,7 +122,7 @@ nav h1 a {
 }
 /* ====================== Map ====================== */
 #map {
-    height: 400px;
+    height: 100%;
     width: 100%;
     background-color: #ccc;
 }
@@ -260,11 +260,10 @@ nav h1 a {
 }
 .inside #map-container {
     background: none repeat scroll 0 0;
-    height: 500px;
+    height: 400px;
 }
 .inside #map {
     background-color: #ccc;
-    height: calc(100% - 131px);
     width: 100%;
 }
 .inside #footer {
@@ -387,7 +386,7 @@ nav h1 a {
         width: 40%;
     }
     .inside #map-container {
-        height: 100%;
+        height: calc(100% - 131px);
         width: 50%;
         position: fixed;
         right: 0;
