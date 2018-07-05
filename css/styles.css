@@ -249,12 +249,12 @@ nav h1 a {
     margin-top: 131px;
 }
 .inside #map-container {
-    background: blue none repeat scroll 0 0;
+    background: none repeat scroll 0 0;
     height: 500px;
 }
 .inside #map {
     background-color: #ccc;
-    height: 100%;
+    height: calc(100% - 131px);
     width: 100%;
 }
 .inside #footer {
