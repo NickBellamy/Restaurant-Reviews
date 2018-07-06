@@ -1,5 +1,5 @@
 const contentToCache = [
-    '/css/style.css',
+    '/css/styles.css',
     '/data/restaurants.json',
     '/img/1.jpg',
     '/img/2.jpg',
@@ -14,13 +14,13 @@ const contentToCache = [
     '/js/dbhelper.js',
     '/js/main.js',
     '/js/restaurant_info.js',
-    '/js/sw-check.js',
+    '/js/sw_check.js',
     'index.html',
     'restaurant.html'
-]
+];
 
 self.addEventListener('install', event => {
     event.waitUntil(
-        caches.open(v1).then(cache => cache.addAll(contentToCache))
+        caches.open('v1').then(cache => cache.addAll(contentToCache))
     );
 });
