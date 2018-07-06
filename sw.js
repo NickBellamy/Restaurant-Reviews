@@ -21,6 +21,16 @@ const contentToCache = [
 
 self.addEventListener('install', event => {
     event.waitUntil(
-        caches.open('v1').then(cache => cache.addAll(contentToCache))
+        caches
+            .open('v1')
+            .then(cache => cache.addAll(contentToCache))
+    );
+});
+
+self.addEventListener('fetch', event => {
+    event.respondWith(
+        caches
+            .match(event.request)
+            .then(response => response ? response : fetch(event.request))
     );
 });
