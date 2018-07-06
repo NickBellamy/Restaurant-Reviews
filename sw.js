@@ -1,3 +1,4 @@
+// List of resources to cache
 const contentToCache = [
     '/css/styles.css',
     '/data/restaurants.json',
@@ -19,6 +20,7 @@ const contentToCache = [
     'restaurant.html'
 ];
 
+// Create and populate cache on serviceworker install
 self.addEventListener('install', event => {
     event.waitUntil(
         caches
@@ -27,6 +29,7 @@ self.addEventListener('install', event => {
     );
 });
 
+// Serve assets from the cache first, falling back to network if not cached
 self.addEventListener('fetch', event => {
     event.respondWith(
         caches
