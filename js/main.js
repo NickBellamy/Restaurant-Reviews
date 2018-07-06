@@ -223,5 +223,3 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 } */
-
-console.log(document.querySelectorAll('a'));
