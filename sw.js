@@ -1,3 +1,6 @@
+// Current version of the cache
+const cacheVersion = 'v1';
+
 // List of resources to cache
 const contentToCache = [
     '/css/styles.css',
@@ -24,8 +27,8 @@ const contentToCache = [
 self.addEventListener('install', event => {
     event.waitUntil(
         caches
-            .open('v1')
-            .then(cache => cache.addAll(contentToCache))
+        .open(cacheVersion)
+        .then(cache => cache.addAll(contentToCache))
     );
 });
 
@@ -34,6 +37,28 @@ self.addEventListener('fetch', event => {
     event.respondWith(
         caches
             .match(event.request)
-            .then(response => response ? response : fetch(event.request))
+            .then(response => (response ? response : fetch(event.request)))
+    );
+});
+
+// Remove old caches upon activation of new cache
+self.addEventListener('activate', event => {
+    console.log(`New cache activated!`);
+    event.waitUntil(
+        caches
+            .keys()
+            .then(cacheNames => {
+                return Promise.all(
+                    cacheNames
+                        .filter(cacheName => {
+                            console.log(`Checking cache ${cacheName}...`)
+                            return cacheName != cacheVersion;
+                        })
+                        .map(cacheName => {
+                            console.log(`Deleting old cache: ${cacheName}`);
+                            return caches.delete(cacheName)
+                        })
+                );
+            })
     );
 });
