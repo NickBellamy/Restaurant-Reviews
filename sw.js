@@ -43,7 +43,6 @@ self.addEventListener('fetch', event => {
 
 // Remove old caches upon activation of new cache
 self.addEventListener('activate', event => {
-    console.log(`New cache activated!`);
     event.waitUntil(
         caches
             .keys()
@@ -51,11 +50,9 @@ self.addEventListener('activate', event => {
                 return Promise.all(
                     cacheNames
                         .filter(cacheName => {
-                            console.log(`Checking cache ${cacheName}...`)
                             return cacheName != cacheVersion;
                         })
                         .map(cacheName => {
-                            console.log(`Deleting old cache: ${cacheName}`);
                             return caches.delete(cacheName)
                         })
                 );
