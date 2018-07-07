@@ -41,7 +41,7 @@ self.addEventListener('fetch', event => {
     );
 });
 
-// Remove old caches upon activation of new cache
+// Remove old caches upon activation of new service worker
 self.addEventListener('activate', event => {
     event.waitUntil(
         caches
