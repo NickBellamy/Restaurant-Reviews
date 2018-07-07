@@ -49,12 +49,8 @@ self.addEventListener('activate', event => {
             .then(cacheNames => {
                 return Promise.all(
                     cacheNames
-                        .filter(cacheName => {
-                            return cacheName != cacheVersion;
-                        })
-                        .map(cacheName => {
-                            return caches.delete(cacheName)
-                        })
+                        .filter(cacheName => cacheName != cacheVersion)
+                        .map(cacheName => caches.delete(cacheName))
                 );
             })
     );
