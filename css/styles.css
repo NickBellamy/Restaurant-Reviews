@@ -95,6 +95,11 @@ nav h1 a {
     font-size: 17px;
     margin: 0;
 }
+#breadcrumb [aria-current="page"] {
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+}
 
 /* Display list items side by side */
 #breadcrumb li {
@@ -103,7 +108,7 @@ nav h1 a {
 }
 
 /* Add a slash symbol (/) before/behind each list item */
-#breadcrumb li + li:before {
+ol li + li:before {
     padding: 8px;
     color: black;
     content: "/\00a0";
